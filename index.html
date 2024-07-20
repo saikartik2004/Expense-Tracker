@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="app-section">
+      <h1>Expense Tracker</h1>
+
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search transactions...">
+        <button class="search-btn">Search</button>
+      </div>
+
+      <div class="balance-container">
+        <h3>Your Balance</h3>
+        <span id="balance">₹0.00</span>
+      </div>
+
+      <div class="inc-exp-container">
+        <div>
+          <h4>Income</h4>
+          <p id="money-plus" class="money plus">₹0.00</p>
+        </div>
+        <div>
+          <h4>Expense</h4>
+          <p id="money-minus" class="money minus">₹0.00</p>
+        </div>
+      </div>
+
+      <h3>History</h3>
+      <ul id="list" class="list"></ul>
+
+      <h3>Add New Transaction</h3>
+      <form id="form">
+        <fieldset>
+          <legend>Transaction Details</legend>
+          <label for="text">Text</label>
+          <input type="text" id="text" placeholder="Enter text..." required>
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="Enter amount..." required>
+        </fieldset>
+        <fieldset>
+          <legend>Transaction Type</legend>
+          <input type="radio" id="income" name="type" value="income" checked>
+          <label for="income">Income</label>
+          <input type="radio" id="expense" name="type" value="expense">
+          <label for="expense">Expense</label>
+        </fieldset>
+        <button class="btn">Add Transaction</button>
+      </form>
+    </div>
+
+    <div class="graph-section">
+      <canvas id="myChart" width="800" height="500"></canvas>
+      <div id="max-income">Max Income: ₹0.00 &#x1F4B0;</div>
+      <div id="max-expense">Max Expense: ₹0.00 &#x1F4B8;</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
